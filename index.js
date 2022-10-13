@@ -1,8 +1,22 @@
 const express = require("express"); // imports express library
 const app = express();  // used to listen for request
-//const mongoose = require("mongoose"); // helps make the connections between our server and mongodb
 
+
+// connecting to database using nodejs and mongoose
+const mongoose = require("mongoose"); // helps make the connections between our server and mongodb
+mongoose.connect('mongodb://localhost:27017/node-file-upl', {useNewUrlParser: true});
+var conn = mongoose.connection;
+conn.on('connected', function() {
+    console.log('database is connected successfully');
+});
+conn.on('disconnected',function(){
+    console.log('database is disconnected successfully');
+})
+conn.on('error', console.error.bind(console, 'connection error:'));
+module.exports = conn;
 app.use(express.static("website"));
+
+
 
 const uri = process.env.MONGODB_URI;
 
