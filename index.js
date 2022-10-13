@@ -4,15 +4,14 @@ const app = express();  // used to listen for request
 
 app.use(express.static("website"));
 
-// app.get("/", function(req,res) {
-//     res.send("WORKING!!!")
-// })
-
 app.listen(process.env.PORT || 5000)
 
 
 // look up youtube on how to setup a simple express server
 
+// app.get("/", function(req,res) {
+//     res.send("WORKING!!!")
+// })
 // look up http request ___
     // post
     // get
