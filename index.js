@@ -9,3 +9,13 @@ app.use(express.static("website"));
 // })
 
 app.listen(process.env.PORT || 5000)
+
+
+// look up youtube on how to setup a simple express server
+
+// look up http request ___
+    // post
+    // get
+
+// app.post is me sending stuff to server
+// app.get is me getting stuff from the server
