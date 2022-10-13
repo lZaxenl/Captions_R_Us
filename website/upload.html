@@ -34,10 +34,14 @@
         <section id = "upload">
             <h1>Play your video here!</h1>
             <div class="wrapper">  
-                <form action="#">
+                <!-- <form action="#">
                     <input class="file-input" type="file" name="file" hidden>
                     <i class="fas fa-cloud-upload-alt"></i>
                     <p>Browse File to Upload</p>
+                </form> -->
+                <form action="/uploadphoto" enctype="multipart/form-data" method="POST">
+                    <input type="file" name="myImage" accept="image/*">
+                    <input type="submit" value="Upload Photo">
                 </form>
             </div>
         </section>
