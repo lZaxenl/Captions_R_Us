@@ -1,4 +1,3 @@
-//for Fatima meow
 <form enctype="multipart/form-data">
 <input id="upload" type=file   accept="text/html" name="files[]" size=30>
 </form>
