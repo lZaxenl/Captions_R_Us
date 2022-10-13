@@ -4,6 +4,10 @@ const app = express();  // used to listen for request
 
 app.use(express.static("website"));
 
+const uri = process.env.MONGODB_URI;
+
+
+
 app.listen(process.env.PORT || 5000)
 
 
