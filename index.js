@@ -1,18 +1,8 @@
 const express = require("express"); // imports express library
-const connectDB = require('./DB/connection');
+//const connectDB = require('./DB/connection');
 const app = express();  // used to listen for request
-const mongoose = require("mongoose"); // helps make the connections between our server and mongodb
 
-connectDB() = async ()=> {
-  await mongoose.connect(uri, { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true, 
-    serverApi: ServerApiVersion.v1 
-  });
-  console.log('db connected..!');
-}
 app.listen(process.env.PORT || 5000)
-const uri = process.env.MONGODB_URI;
 
 
 
