@@ -1,67 +1,45 @@
 const express = require("express"); // imports express library
+const connectDB = require('./DB/connection');
 const app = express();  // used to listen for request
-const bodyParser = require("body-parser");
-const path = require('path');
-const fs = require("fs");
-const multer = require("multer");
 const mongoose = require("mongoose"); // helps make the connections between our server and mongodb
-var imageModel = require('../models/imageModel');
 
+connectDB() = async ()=> {
+  await mongoose.connect(uri, { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true, 
+    serverApi: ServerApiVersion.v1 
+  });
+  console.log('db connected..!');
+}
+app.listen(process.env.PORT || 5000)
 const uri = process.env.MONGODB_URI;
 
-// connecting to database using nodejs and mongoose
-mongoose.connect('mongodb://localhost:27017/node-file-upl', {useNewUrlParser: true});
-var conn = mongoose.connection;
-conn.on('connected', function() {
-    console.log('database is connected successfully');
-});
-conn.on('disconnected',function(){
-    console.log('database is disconnected successfully');
-})
-conn.on('error', console.error.bind(console, 'connection error:'));
-module.exports = conn;
-app.use(express.static("website"));
 
-app.use(bodyParser.urlencoded(
-    { extended:true }
-))
 
-app.set("view engine","ejs");
+// var upload = multer({ storage: storage })
 
-// SET STORAGE
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads')
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now())
-  }
-})
+// app.get("/",(req,res)=>{
+//   res.render("index");
+// })
 
-var upload = multer({ storage: storage })
-
-app.get("/",(req,res)=>{
-  res.render("index");
-})
-
-app.post("/uploadphoto",upload.single('myImage'),(req,res)=>{
-  var img = fs.readFileSync(req.file.path);
-  var encode_img = img.toString('base64');
-  var final_img = {
-      contentType:req.file.mimetype,
-      image:new Buffer(encode_img,'base64')
-  };
-  imageModel.create(final_img,function(err,result){
-      if(err){
-          console.log(err);
-      }else{
-          console.log(result.img.Buffer);
-          console.log("Saved To database");
-          res.contentType(final_img.contentType);
-          res.send(final_img.image);
-      }
-  })
-})
+// app.post("/uploadphoto",upload.single('myImage'),(req,res)=>{
+//   var img = fs.readFileSync(req.file.path);
+//   var encode_img = img.toString('base64');
+//   var final_img = {
+//       contentType:req.file.mimetype,
+//       image:new Buffer(encode_img,'base64')
+//   };
+//   imageModel.create(final_img,function(err,result){
+//       if(err){
+//           console.log(err);
+//       }else{
+//           console.log(result.img.Buffer);
+//           console.log("Saved To database");
+//           res.contentType(final_img.contentType);
+//           res.send(final_img.image);
+//       }
+//   })
+// })
 
 
 //Code to start server
@@ -70,7 +48,7 @@ app.post("/uploadphoto",upload.single('myImage'),(req,res)=>{
 // })
 
 
-app.listen(process.env.PORT || 5000)
+
 
 
 // look up youtube on how to setup a simple express server
