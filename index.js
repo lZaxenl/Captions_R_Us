@@ -3,6 +3,7 @@ import express from 'express';
 const app = express();  // used to listen for request
 import mongoose from 'mongoose';
 import dotenv from "dotenv";
+import multer from "multer";
 
 dotenv.config();
 
@@ -17,9 +18,24 @@ mongoose
   .connect(uri, { useNewUrlParser: true })
   .then(() => console.log("MongoDB connected"));
 
-const db = mongoose.connection;
+const db = mongoose.connection; // db is my connection to the database
 
-app.listen(process.env.PORT || PORT, () => { console.log(`listening on ${PORT}`) });
+// create schema
+const schema = {
+  video: video
+}
+const monmodel = mongoose.model("newVideo", schema);
+
+// post 
+app.post("/post", async(req, res) => {
+  console.log("inside post function");
+
+  const data = new monmodel({
+    video:req.body.video
+  })
+});
+
+app.listen(process.env.PORT || PORT, () => { console.log(`listening on Port: ${PORT}`) });
 
 
 // look up mongoose commands

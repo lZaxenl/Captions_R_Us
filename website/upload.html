@@ -33,15 +33,50 @@
         <!-- upload section -->
         <section id = "upload">
             <h1>Play your video here!</h1>
-            <div class="wrapper">  
-                <!-- <form action="#">
-                    <input class="file-input" type="file" name="file" hidden>
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <p>Browse File to Upload</p>
-                </form> -->
+            <div class="wrapper">
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <div>
+                        <label>Select Video</label>
+                        <input class="form-control-file" type="file" name="video" accept="video/*" required>
+                    </div>
+                    
+                </form>
             </div>
         </section>
         
+
+
+        <!-- setup to recieve the users video mp4 file -->
+        <!-- Then I need to make a POST request  -->
+        <!-- this takes us to the back end where we do a ROUTE in index.js file-->
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <form enctype="multipart/form-data">
             <input id="upload" type=file   accept="text/html" name="files[]" size=30>
             </form>
