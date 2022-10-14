@@ -1,10 +1,31 @@
-const express = require("express"); // imports express library
-//const connectDB = require('./DB/connection');
+//const express = require("express"); // imports express library
+import express from 'express';
 const app = express();  // used to listen for request
+import mongoose from 'mongoose';
+import dotenv from "dotenv";
 
+dotenv.config();
+
+app.use(express.json);
 app.use(express.static("website"));
 
-app.listen(process.env.PORT || 5000)
+const PORT = 5000;
+const uri = process.env.MONGO_URI;
+
+// connect to database and tell me when it is connected
+mongoose
+  .connect(uri, { useNewUrlParser: true })
+  .then(() => console.log("MongoDB connected"));
+
+const db = mongoose.connection;
+
+app.listen(process.env.PORT || PORT, () => { console.log(`listening on ${PORT}`) });
+
+
+// look up mongoose commands
+
+
+
 
 
 
