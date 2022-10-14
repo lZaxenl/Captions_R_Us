@@ -2,9 +2,7 @@ const express = require("express"); // imports express library
 //const connectDB = require('./DB/connection');
 const app = express();  // used to listen for request
 
-app.get("/", function (req, res) {
-  res.send("WORKING!!!");
-});
+app.use(express.static("website"));
 
 app.listen(process.env.PORT || 5000)
 
