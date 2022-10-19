@@ -20,20 +20,20 @@ mongoose
 
 const db = mongoose.connection; // db is my connection to the database
 
-// create schema
-const schema = {
-  video: video
-}
-const monmodel = mongoose.model("newVideo", schema);
+// // create schema
+// const schema = {
+//   video: video
+// }
+// const monmodel = mongoose.model("newVideo", schema);
 
-// post 
-app.post("/post", async(req, res) => {
-  console.log("inside post function");
+// // post 
+// app.post("/post", async(req, res) => {
+//   console.log("inside post function");
 
-  const data = new monmodel({
-    video:req.body.video
-  })
-});
+//   const data = new monmodel({
+//     video:req.body.video
+//   })
+// });
 
 app.listen(process.env.PORT || PORT, () => { console.log(`listening on Port: ${PORT}`) });
 
