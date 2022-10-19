@@ -1,6 +1,8 @@
-require('dotenv').config();
-const fetch = require('node-fetch'); // import Node.js libraries
-const fs = require('fs');
+//require('dotenv').config();
+import 'dotenv/config';
+import fetch from 'node-fetch'; // import Node.js libraries
+//const fs = require('fs');
+import fs from 'fs'
 const url = 'https://api.assemblyai.com/v2/upload'; // private storage URL; only accessible through AssemblyAI API 
 
 
