@@ -1,5 +1,5 @@
 // required dom elements
-const buttonEl = document.getElementById('upload');
+const buttonEl = document.getElementById('thumbnail');
 const messageEl = document.getElementById('message');
 //const titleEl = document.getElementById('real-time-title');
 
