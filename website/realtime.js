@@ -1,7 +1,7 @@
 // required dom elements
-const buttonEl = document.getElementById('button');
+const buttonEl = document.getElementById('upload');
 const messageEl = document.getElementById('message');
-const titleEl = document.getElementById('real-time-title');
+//const titleEl = document.getElementById('real-time-title');
 
 // set initial state of application variables
 messageEl.style.display = 'none';
@@ -97,7 +97,7 @@ const run = async () => {
 
   isRecording = !isRecording;
   buttonEl.innerText = isRecording ? 'Stop' : 'Record';
-  titleEl.innerText = isRecording ? 'Click stop to end recording!' : 'Click start to begin recording!'
+//   titleEl.innerText = isRecording ? 'Click stop to end recording!' : 'Click start to begin recording!'
 };
 
 buttonEl.addEventListener('click', () => run());
