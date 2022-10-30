@@ -1,4 +1,5 @@
 short description                     long description                  severity (1 to 4)                    fix time                     link
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Displaying closed captions            Issue displaying closed           4                                    Not fixed                  https://github.com/lZaxenl/test/blob/master/website/realtime.js
                                       captions when the client 
                                       uploads a video
