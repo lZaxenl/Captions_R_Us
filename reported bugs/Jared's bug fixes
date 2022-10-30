@@ -1,1 +1,19 @@
-
+short description                     long description                  severity (1 to 4)                    fix time                     link
+Displaying closed captions            Issue displaying closed           4                                    Not fixed                  https://github.com/lZaxenl/test/blob/master/website/realtime.js
+                                      captions when the client 
+                                      uploads a video
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------                                                                                                                      
+Transcription                         Issue getting the                 4                                   4+ hours                   https://github.com/lZaxenl/test/tree/master/transcribe           
+                                      transcription to work 
+                                      correctly when uploading 
+                                      a mp3 or mp4 file    
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------                                      
+Server connection                   Issues getting our code to          3                                  1 hour                    https://github.com/lZaxenl/test/blob/master/index.js
+                                     connect to the AssemblyAI 
+                                     server
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                     
+                                      
+                                      
+                                      
+                                      
