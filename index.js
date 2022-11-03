@@ -12,7 +12,7 @@ dotenv.config();
 
 app.use(express.json);
 app.use(cors());
-app.use(express.static("website"));
+app.use(express.static("Site1"));
 
 const PORT = 5000;
 const uri = process.env.MONGO_URI;
