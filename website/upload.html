@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Captions-R-Us </title>
+        <link rel="icon" type="image/png" href="img/favicon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+
+        <!-- Navigation bar buttons -->
+        <nav id="nav">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="upload.html">UPLOAD</a>
+            <a href="/"><img src="img/logo.png"></a>
+        </nav>
+
+        <!-- upload section -->
+        <section id = "upload">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- <p id="button" class="real-time-interface__button">Start</p> -->
+            <p id="message" class="real-time-interface__message"></p>
+            <div id="thumbnail"></div>
+            <input type="file" id="upload-file" accept="video/*" multiple/>
+            
+            <div id="textbox" class="format">
+                <p>Enter your text here!</p>
+                    <textarea class="freeform" id="freeform" name="freeform" rows="4" cols="50"></textarea>    
+            </div>
+        <div class="text-format">
+            <div class="text-size" style="width:300px">
+                <p>Text Size</p>
+                    <select id="text-size" onchange="setTextSize()" style="width:100px">
+                            <option value="8px">8</option>
+                            <option value="10px">10</option>
+                            <option value="12px">12</option>
+                            <option value="16px">16</option>
+                            <option value="20px">20</option>
+                            <option value="24px">24</option>
+                            <option value="28px">28</option>
+                    </select>
+            </div>
+            <div class="text-color" style="width:300px">
+                <p>Text Color</p>
+                    <select id="text-color" onchange="setTextColor()"style="width:100px">
+                        <option value="#000000">Black</option>
+                        <option value="#ffffff">White</option>
+                        <option value="#ff0000">Red</option>
+                        <option value="#ffff00">Yellow</option>
+                        <option value="#0000ff">Blue</option>
+                        <option value="#008000">Green</option>
+                        <option value="#ffa500">Orange</option>
+                        <option value="#ee82ee">Violet</option>
+                    </select>
+            </div> 
+            <div  class="background-color" style="width:300px">
+                <p>Background Color</p>
+                    <select id="background-color" onchange="setBackgroundColor()"style="width:100px">
+                        <option value="#000000">Black</option>
+                        <option value="#ffffff">White</option>
+                        <option value="#ff0000">Red</option>
+                        <option value="#ffff00">Yellow</option>
+                        <option value="#0000ff">Blue</option>
+                        <option value="#008000">Green</option>
+                        <option value="#ffa500">Orange</option>
+                        <option value="#ee82ee">Violet</option>
+                    </select>
+            </div>
+            <div  class="font-family" style="width:300px">
+                <p>Font</p>
+                    <select id="font-family" onchange="setFont()"style="width:100px">
+                        <option value="arial">Arial</option>
+                        <option value="calibri">calibri</option>
+                        <option value="Sans serif">Sans serif</option>
+                        <option value="American Typewriter">American Typewriter</option>Yellow</option>
+                        <option value="Cambria">Cambria</option>
+                        <option value="Georgia">Georgia</option>Green</option>
+                    </select>
+            </div>
+            <style>
+                .text-format {
+                    text-align: left;
+                    font-family: arial;
+                }
+            </style>
+        </div> 
+            
+            
+        <!-- Script -->
+        <script src="textformat.js"></script>
+        <script src="script.js"></script>
+        <script src="realtime.js"></script>
+        <script src="/transcribe/uploadFile.js"></script>
+        
+        
+
+    </body>
+</html>
